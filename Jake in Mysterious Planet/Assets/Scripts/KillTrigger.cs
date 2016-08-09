@@ -5,7 +5,7 @@ public class KillTrigger : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Player") {
-			Debug.Log ("Player collider entered the trigger");
+			Debug.Log ("Player collider entered the trigger and got killed");
 			PlayerController.instance.Kill();
 		}
 	}
