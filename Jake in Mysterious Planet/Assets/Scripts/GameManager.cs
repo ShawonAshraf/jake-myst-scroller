@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 	public Canvas menuCanvas;
 	public Canvas inGameCanvas;
 	public Canvas gameOverCanvas;
+	public int collectedCoins;
 
 	void Awake() {
 		currentGameState = GameState.menu;
@@ -66,5 +67,10 @@ public class GameManager : MonoBehaviour {
 		}
 
 		currentGameState = gameState;
+	}
+
+	public void CollectedCoin() 
+	{
+		collectedCoins++;
 	}
 }
