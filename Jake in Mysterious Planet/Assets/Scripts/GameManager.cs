@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour {
 	// when the game starts it has to be in the menu
 	public GameState currentGameState;
 	public static GameManager instance;
+	public Canvas menuCanvas;
+	public Canvas inGameCanvas;
+	public Canvas gameOverCanvas;
 
 	void Awake() {
 		currentGameState = GameState.menu;
@@ -46,13 +49,19 @@ public class GameManager : MonoBehaviour {
 
 	void SetGameState(GameState gameState) {
 		if (gameState == GameState.menu) {
-			
+			menuCanvas.enabled = true;
+			inGameCanvas.enabled = false;
+			gameOverCanvas.enabled = false;
 		} 
 		else if (gameState == GameState.inGame) {
-			
+			menuCanvas.enabled = false;
+			inGameCanvas.enabled = true;
+			gameOverCanvas.enabled = false;
 		} 
 		else if (gameState == GameState.gameOver) {
-			
+			menuCanvas.enabled = false;
+			inGameCanvas.enabled = false;
+			gameOverCanvas.enabled = true;
 		}
 
 		currentGameState = gameState;

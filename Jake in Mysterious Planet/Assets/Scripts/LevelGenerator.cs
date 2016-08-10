@@ -27,6 +27,10 @@ public class LevelGenerator : MonoBehaviour {
 
 	void Start() 
 	{
+		if(pieces.Count != 0) 
+		{
+			pieces.Clear();
+		}
 		GenerateInitialPieces();
 	}
 
