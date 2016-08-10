@@ -26,16 +26,11 @@ public class GameManager : MonoBehaviour {
 		currentGameState = GameState.menu;
 	}
 
-	void Update() {
-		if (Input.GetButtonDown("s")) {
-			StartGame();
-		}
-	}
-
 	// Use this to start the game
 	public void StartGame() {
-		PlayerController.instance.StartGame();
 		SetGameState(GameState.inGame);
+		LevelGenerator.instance.GenerateInitialPieces();
+		PlayerController.instance.StartGame();
 	}
 
 	// called when the player dies
@@ -47,6 +42,7 @@ public class GameManager : MonoBehaviour {
 	// called when player wants to go back to main menu
 	public void BackToMenu() {
 		SetGameState(GameState.menu);
+		LevelGenerator.instance.GenerateInitialPieces();
 	}
 
 	void SetGameState(GameState gameState) {

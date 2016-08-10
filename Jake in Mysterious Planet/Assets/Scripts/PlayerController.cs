@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour {
 		instance = this;
         rBody = GetComponent<Rigidbody2D>();
 		startingPosition = this.transform.position;
-		
-
     }
 
 	public void StartGame () {
@@ -36,6 +34,11 @@ public class PlayerController : MonoBehaviour {
 			animator.SetBool ("isGrounded", IsGrounded());
 			UpdateHighScore();
 		}
+	}
+
+	public void SetStartPosition(Vector3 position) 
+	{
+		startingPosition = position;
 	}
 
     void Jump()
@@ -69,6 +72,7 @@ public class PlayerController : MonoBehaviour {
 		GameManager.instance.GameOver();
 		animator.SetBool("isAlive", false);
 		UpdateHighScore();
+		LevelGenerator.instance.ResetLevel();
 	}
 
 	public float GetDistance()

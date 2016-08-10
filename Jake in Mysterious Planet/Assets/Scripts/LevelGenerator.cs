@@ -20,17 +20,16 @@ public class LevelGenerator : MonoBehaviour {
 		instance = this;
 	}
 
-	void Update() 
-	{
-
-	}
+	// void Update()
+	// {
+	// 	while(GameManager.instance.currentGameState == GameState.inGame) 
+	// 	{
+	// 		AddPiece();
+	// 	} 
+	// }
 
 	void Start() 
 	{
-		if(pieces.Count != 0) 
-		{
-			pieces.Clear();
-		}
 		GenerateInitialPieces();
 	}
 
@@ -70,10 +69,20 @@ public class LevelGenerator : MonoBehaviour {
 
 	public void GenerateInitialPieces() 
 	{
-		for(int i = 0; i < 2; i++) 
+		for(int i = 0; i < 3; i++) 
 		{
 			AddPiece();
 		}
+	}
+
+	public void ResetLevel()
+	{
+		foreach(var p in pieces)
+		{
+			Destroy(p.gameObject);
+		}
+		pieces.Clear();
+		Debug.Log("pieces cleared.");
 	}
 
 

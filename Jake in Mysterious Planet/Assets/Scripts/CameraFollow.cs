@@ -3,8 +3,6 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour {
 
-
-	public static CameraFollow instance;
 	public Vector2 offset = new Vector2 (0.1f, 1f);
 
 	public float dampTime = 0.3f;
@@ -13,7 +11,6 @@ public class CameraFollow : MonoBehaviour {
 
 
 	void Awake() {
-		instance = this;
 		Application.targetFrameRate = 60;
 	}
 
