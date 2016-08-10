@@ -5,6 +5,7 @@ using System.Collections;
 public class ViewInGame : MonoBehaviour {
 	public Text coinLabel;
 	public Text scoreLabel;
+	public Text highScoreLabel;
 
 	void Update() 
 	{
@@ -12,6 +13,7 @@ public class ViewInGame : MonoBehaviour {
 		{
 			coinLabel.text = GameManager.instance.collectedCoins.ToString();
 			scoreLabel.text = PlayerController.instance.GetDistance().ToString("f0");
+			highScoreLabel.text = PlayerPrefs.GetFloat("highscore", 0).ToString("f0");
 		}
 	}
 }

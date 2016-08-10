@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Collectable.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameOverView.cs" />
      <Compile Include="Assets\Scripts\KillTrigger.cs" />
      <Compile Include="Assets\Scripts\LeaveTrigger.cs" />
      <Compile Include="Assets\Scripts\LevelGenerator.cs" />

@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 		instance = this;
         rBody = GetComponent<Rigidbody2D>();
 		startingPosition = this.transform.position;
+		
+
     }
 
 	public void StartGame () {
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour {
 				Jump ();
 			}
 			animator.SetBool ("isGrounded", IsGrounded());
+			UpdateHighScore();
 		}
 	}
 
