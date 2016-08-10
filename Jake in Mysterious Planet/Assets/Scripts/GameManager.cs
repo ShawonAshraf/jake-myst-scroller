@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour {
 	// called when the player dies
 	public void GameOver() {
 		SetGameState(GameState.gameOver);
+		LevelGenerator.instance.pieces.Clear();
 	}
 
 	// called when player wants to go back to main menu

@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
 			if (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) {
 				Jump ();
 			}
-			animator.SetBool ("isGrounded", IsGrounded ());
+			animator.SetBool ("isGrounded", IsGrounded());
 		}
 	}
 
