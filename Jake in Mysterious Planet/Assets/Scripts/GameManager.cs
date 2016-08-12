@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour {
 	void Awake() {
 		currentGameState = GameState.menu;
 		instance = this;
+		// PlayerPrefs.DeleteAll();
 	}
 		
 
