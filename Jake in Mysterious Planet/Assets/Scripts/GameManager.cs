@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 		currentGameState = GameState.menu;
 		instance = this;
         collectedCoins = 0;
-		// PlayerPrefs.DeleteAll();
+		//PlayerPrefs.DeleteAll();
 	}
 		
 

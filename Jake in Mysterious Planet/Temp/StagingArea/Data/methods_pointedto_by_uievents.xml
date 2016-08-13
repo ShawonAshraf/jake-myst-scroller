@@ -1,0 +1,9 @@
+<linker>
+	<assembly fullname="Assembly-CSharp">
+		<type fullname="GameManager">
+			<method name="QuitGame"/>
+			<method name="StartGame"/>
+			<method name="StartGame"/>
+		</type>
+	</assembly>
+</linker>
