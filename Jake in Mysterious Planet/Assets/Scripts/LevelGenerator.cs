@@ -10,7 +10,8 @@ public class LevelGenerator : MonoBehaviour {
 	public List<LevelPiece> levelPrefabs = new List<LevelPiece>();
 
 	// starting point for a piece
-	public Transform levelStartPoint;
+	private Transform levelStartPoint;
+    private Vector3 startPosition; // to avoid errors this needed to be hardcoded
 
 	// generated pieces
 	public List<LevelPiece> pieces = new List<LevelPiece>();
@@ -18,7 +19,10 @@ public class LevelGenerator : MonoBehaviour {
 	void Awake()
 	{
 		instance = this;
-	}
+        // hard code!
+        startPosition = new Vector3(-2.51f,-5.8f, 0);
+        //levelStartPoint.transform.position = startPosition;
+    }
 
 	// void Update()
 	// {
@@ -30,6 +34,8 @@ public class LevelGenerator : MonoBehaviour {
 
 	void Start() 
 	{
+        //ResetLevel();
+        // so we force things here!
 		GenerateInitialPieces();
 	}
 
@@ -47,7 +53,7 @@ public class LevelGenerator : MonoBehaviour {
 
 		if(pieces.Count == 0) 
 		{
-			spawnPosition = levelStartPoint.position;
+            spawnPosition = startPosition;
 		}
 		else 
 		{

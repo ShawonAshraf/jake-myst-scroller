@@ -17,28 +17,25 @@ public class PlayerController : MonoBehaviour {
     {
 		instance = this;
         rBody = GetComponent<Rigidbody2D>();
-		startingPosition = this.transform.position;
+        // hard coded to avoid error
+        startingPosition = new Vector3(-7.45f, 4.87f, 0);
     }
 
 	public void StartGame () {
         animator.SetBool("isAlive", true);
-		this.transform.position = startingPosition;
+        startingPosition = new Vector3(-7.45f, 4.87f, 0);
+        this.transform.position = startingPosition;
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update() {
 		if (GameManager.instance.currentGameState == GameState.inGame) {
-			if (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) {
-				Jump ();
+			if (Input.GetMouseButtonDown (0)) {
+				Jump();
 			}
 			animator.SetBool ("isGrounded", IsGrounded());
 			UpdateHighScore();
 		}
-	}
-
-	public void SetStartPosition(Vector3 position) 
-	{
-		startingPosition = position;
 	}
 
     void Jump()
@@ -72,7 +69,7 @@ public class PlayerController : MonoBehaviour {
 		GameManager.instance.GameOver();
 		animator.SetBool("isAlive", false);
 		UpdateHighScore();
-		LevelGenerator.instance.ResetLevel();
+		//LevelGenerator.instance.ResetLevel();
 	}
 
 	public float GetDistance()
